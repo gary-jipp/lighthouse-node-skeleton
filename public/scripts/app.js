@@ -11,14 +11,14 @@ const onClear = function (event) {
 };
 
 const onClick = function (event) {
-  console.log('click');
+  // console.log('click');
 
   $.ajax({
     method: "GET",
     url: "/api/users"
   })
     .then((res) => {
-      console.log(res);
+      // console.log(res);
       const container = $("#list");
       container.empty();
       for (user of res.users) {
