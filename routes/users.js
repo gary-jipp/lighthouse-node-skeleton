@@ -32,8 +32,5 @@ module.exports = (pool) => {
       });
   });
 
-
-  // Notice there is no POST route defined here
-
   return router;
 };
