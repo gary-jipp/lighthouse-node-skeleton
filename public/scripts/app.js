@@ -13,6 +13,8 @@ const onClear = function (event) {
 const onClick = function (event) {
   // console.log('click');
 
+  // res.json(stubData);
+
   $.ajax({
     method: "GET",
     url: "/api/users"
