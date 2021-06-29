@@ -41,6 +41,7 @@ module.exports = (pool) => {
   });
 
   // Get by ID.  (no client so test in RESTED)
+  // example:  http://localhost:8080/api/users/2 
   router.get("/:id", (req, res) => {
     const id = req.params.id;
 
