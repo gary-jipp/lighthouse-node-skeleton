@@ -25,6 +25,8 @@ app.set("view engine", "ejs");
 // Note:  this replaces bodyParser now
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.json());    // enable JSON 
+
 app.use(express.static("public"));
 
 // Separated Routes for each Resource

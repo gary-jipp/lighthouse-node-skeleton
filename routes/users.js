@@ -40,5 +40,22 @@ module.exports = (pool) => {
       });
   });
 
+  // Get by ID.  (no client so test in RESTED)
+  router.get("/:id", (req, res) => {
+    const id = req.params.id;
+
+    pool.query(`SELECT * FROM users where id=$1`, [id])
+      .then(data => {
+        const user = data.rows[0];
+        res.json(user);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+
   return router;
 };
