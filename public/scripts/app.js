@@ -1,8 +1,6 @@
 $(() => {
-
   $('#show').on('click', onClick);
   $('#clear').on('click', onClear);
-
 });
 
 const onClear = function (event) {
