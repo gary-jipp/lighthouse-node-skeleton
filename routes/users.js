@@ -8,19 +8,29 @@
 const express = require('express');
 const router = express.Router();
 
-const stubData = {
-  users: [{ name: "bob" }, { name: "alice" }, { name: "Mallory" }]
-};
+const testUser = { name: "bob" };
 
 module.exports = (pool) => {
 
   router.post("/", (req, res) => {
-    console.log("I was Posted");
-    res.json(stubData);
+    const name = req.body.name;
+    console.log(req.body);
+
+    pool.query(`SELECT * FROM users where name=$1`, [name])
+      .then(data => {
+        const user = data.rows[0];
+        res.json(user);
+      })
+      .catch(err => {
+        console.log(err);
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
   });
 
   router.get("/", (req, res) => {
-    pool.query(`SELECT * FROM users;`)
+    pool.query(`SELECT * FROM users`)
       .then(data => {
         const users = data.rows;
         res.json({ users });
