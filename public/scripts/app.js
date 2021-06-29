@@ -1,10 +1,8 @@
 $(() => {
-
   $('#show').on('click', onClick);
   $('#clear').on('click', onClear);
   $('#login').on('submit', onLogin);
   $('#logout').on('click', onLogout);
-
 });
 
 // Current logged in user
