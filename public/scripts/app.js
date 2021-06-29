@@ -1,12 +1,13 @@
+// State: Current logged in user
+let user = {};
+
+// Document.ready - runs when page loads
 $(() => {
   $('#show').on('click', onClick);
   $('#clear').on('click', onClear);
   $('#login').on('submit', onLogin);
   $('#logout').on('click', onLogout);
 });
-
-// State: Current logged in user
-let user = {};
 
 const onClear = function (event) {
   $("#list").empty();
