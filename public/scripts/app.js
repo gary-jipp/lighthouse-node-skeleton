@@ -5,7 +5,7 @@ $(() => {
   $('#logout').on('click', onLogout);
 });
 
-// Current logged in user
+// State: Current logged in user
 let user = {};
 
 const onClear = function (event) {
