@@ -8,8 +8,6 @@
 const express = require('express');
 const router = express.Router();
 
-const testUser = { name: "bob" };
-
 module.exports = (pool) => {
 
   router.post("/", (req, res) => {
